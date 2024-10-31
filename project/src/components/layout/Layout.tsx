@@ -1,26 +1,10 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import AppMenu from "./AppMenu";
 const Layout = () => {
   return (
     <>
       <header>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/" state={{ hello: "Hello word" }}>
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to="/products">Products</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-            <li>
-              <Link to="/cart">Cart</Link>
-            </li>
-          </ul>
-        </nav>
+        <AppMenu />
       </header>
       <main>
         <Outlet />
