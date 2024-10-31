@@ -87,7 +87,7 @@ const LoginPage = () => {
   return (
     <div className="item">
       <div>
-        <img src="src/pages/auth/img/shop2.jpg" alt="Img"></img>
+        <img src="./shop2.jpg" alt="Img"></img>
       </div>
       <div className="login">
         <h1>Login</h1>
