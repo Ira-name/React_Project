@@ -33,7 +33,7 @@ const AppMenu = () => {
           </li>
         )}
         <li>
-        <Link to="/cart">Cart</Link>
+        <Link to="/cart"> User Cart</Link>
         </li>
         <li>
           <button onClick={handleLogout}>Logout</button>
