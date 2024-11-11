@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../css/Login.css";
+import { Button, Form, InputGroup } from "react-bootstrap";
+import { BsEye, BsEyeSlash } from "react-icons/bs";
 const users = [
   {
     userName: "admin",
@@ -85,71 +86,69 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="item">
-      <div>
-        <img src="./shop2.jpg" alt="Img"></img>
-      </div>
-      <div className="login">
-        <h1>Login</h1>
-        <div className="form">
-          <form onSubmit={handleSubmit}>
-            <div className="name">
-              <label className="text" htmlFor="username">
-                Name
-              </label>
-              <input
-                id="username"
-                name="username"
-                type="text"
-                value={userName}
-                onChange={handleUserNameInputChange}
-              />
-            </div>
-            <div className="email">
-              <label className="text" htmlFor="email">
-                Email
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                value={email}
-                onChange={handleEmailInputChange}
-              />
-            </div>
+    <div className="d-flex  justify-content-center align-items-center ">
+    <img src="./shop2.jpg" alt="ЛОГОТИП" className="mt-5 mr-5 " />
 
-            <div className="password">
-              <label className="text" htmlFor="password">
-                Password
-              </label>
-              <div className="show">
-                <input
-                  className="password_show"
-                  id="password"
-                  name="password"
-                  type={showPassword ? "text" : "password"}
-                  value={password}
-                  onChange={handlePasswordInputChange}
-                />
-                <button
-                  type="button"
-                  onClick={submitShowPassword}
-                  aria-label={showPassword ? "Hide password" : "Show password"}
-                >
-                  <i
-                    className={`bi ${showPassword ? "bi-eye-slash" : "bi-eye"}`}
-                  />
-                </button>
-              </div>
-            </div>
-            <button className="submit" type="submit">
-              Login
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  );
+    <Form
+      onSubmit={handleSubmit} /*className="w-100"*/
+      style={{ width: "350px" }}
+    >
+      <h1 className="text-center mb-4">Login</h1>
+
+      <Form.Group
+        className="mb-3 d-flex flex-column align-items-start"
+        controlId="formUserName"
+      >
+        <Form.Label>Name</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Enter name"
+          value={userName}
+          onChange={handleUserNameInputChange}
+        />
+      </Form.Group>
+
+      <Form.Group
+        className="mb-3 d-flex flex-column align-items-start"
+        controlId="formEmail"
+      >
+        <Form.Label>Email</Form.Label>
+        <Form.Control
+          type="email"
+          placeholder="Enter email"
+          value={email}
+          onChange={handleEmailInputChange}
+        />
+      </Form.Group>
+
+      <Form.Group
+        className="mb-3 d-flex flex-column align-items-start"
+        controlId="formPassword"
+      >
+        <Form.Label>Password</Form.Label>
+        <InputGroup>
+          <Form.Control
+            type={showPassword ? "text" : "password"}
+            placeholder="Password"
+            value={password}
+            onChange={handlePasswordInputChange}
+          />
+          <Button
+            variant="outline-secondary"
+            onClick={submitShowPassword}
+            aria-label={showPassword ? "Hide password" : "Show password"}
+          >
+            {showPassword ? <BsEyeSlash /> : <BsEye />}
+          </Button>
+        </InputGroup>
+      </Form.Group>
+
+      <Button variant="primary" type="submit" className="w-100">
+        Login
+      </Button>
+    </Form>
+  </div>
+);
 };
 
 export default LoginPage;

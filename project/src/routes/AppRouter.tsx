@@ -4,7 +4,7 @@ import UserPage from "../pages/users/UserPage";
 import Layout from "../components/layout/Layout";
 import NotFoundPage from "../components/NotFoundPage";
 import CartPage from "../pages/cart/CartPage";
-import ProductPage from "../pages/products/components/ProductPage";
+import ProductPage from "../pages/products/ProductPage";
 import ProtectedRoute from "./ProtectedRoute";
 import LoginPage from "../pages/auth/components/LoginPage";
 

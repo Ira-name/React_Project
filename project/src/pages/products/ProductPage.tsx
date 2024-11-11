@@ -1,4 +1,4 @@
-import ProductListContainer from "./list/ProductListContainer";
+import ProductListContainer from "./components/list/ProductListContainer";
 
 const ProductPage = () => {
   return (
