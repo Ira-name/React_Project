@@ -1,7 +1,9 @@
+import HomeView from "./components/HomeView";
+
 const HomePage = () => {
   return (
-    <>
-      <h1>Hello shop</h1>
+<>
+      <HomeView />
     </>
   );
 };

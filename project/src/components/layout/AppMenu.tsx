@@ -20,7 +20,11 @@ const AppMenu = () => {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand>Shop</Navbar.Brand>
+        <Navbar.Brand><img
+            src="src/components/img/bag_2.png"
+            alt="Shop Logo"
+            style={{ height: "40px", width: "auto" }}
+          /></Navbar.Brand>
         <Nav className="me-auto">
           <Nav.Link as={Link} to="/" state={{ hello: "Hello, world!" }}>
             Home
