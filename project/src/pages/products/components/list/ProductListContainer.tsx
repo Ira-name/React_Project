@@ -1,48 +1,33 @@
-import { useEffect, useState } from "react";
-import { Product, ProductService } from "../../service/products.service";
-import { AxiosError } from "axios";
+import ErrorMessage from "../../../../components/layout/ErrorMessage";
+import Loading from "../../../../components/layout/Loading";
+import { useRenderCount } from "../../../../hooks/useRenderCount";
+import { useProductTableStore } from "../../hooks/useProductTableStore";
+import AddProductForm from "./AddProductForm";
 import ProductList from "./ProductList";
 
 const ProductListContainer = () => {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const renderCount = useRenderCount();
 
-  useEffect(() => {
-    let isMounted = true;
-
-    const abortController = new AbortController();
-    const signal = abortController.signal;
-
-    const productService = new ProductService(signal);
-
-    const fetchProducts = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-        const response = await productService.getProducts();
-        if (isMounted) {
-          setProducts(response.products);
-        }
-      } catch (error) {
-        setError((error as AxiosError).message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProducts();
-    return () => {
-      isMounted = false;
-      abortController.abort();
-    };
-  }, []);
+  const {
+    error,
+    loading,
+    memoizedSaveProductButtonClickCallback,
+    memoizedProductItemDeleteButtonClickCallback,
+    memoizedAddProductCallback,
+    productList,
+  } = useProductTableStore();
 
   return (
     <div>
-      {loading && <p>Loading...</p>}
-      {error && <p>Error: {error}</p>}
-      <ProductList productList={products} />
+      <h5>ProductTableContainer count: {renderCount}</h5>
+      {loading && <Loading />}
+      {error && <ErrorMessage error={error} />}
+      <AddProductForm onAddProduct={memoizedAddProductCallback} />
+      <ProductList
+        productList={productList}
+        onProductItemDelete={memoizedProductItemDeleteButtonClickCallback}
+        onSaveProductButtonClick={memoizedSaveProductButtonClickCallback}
+      />
     </div>
   );
 };

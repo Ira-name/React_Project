@@ -1,9 +1,10 @@
+import PageTitle from "../../components/layout/PageTitle";
 import ProductListContainer from "./components/list/ProductListContainer";
 
 const ProductPage = () => {
   return (
     <div>
-      <h2>Products</h2>
+       <PageTitle title="Product List" />
       <ProductListContainer />
     </div>
   );
