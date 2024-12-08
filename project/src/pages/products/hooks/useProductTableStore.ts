@@ -114,6 +114,28 @@ export const useProductTableStore = () => {
     []
   );
 
+  const memoizedSortProductsCallback = useCallback(
+    async (order: "asc" | "desc" | "default") => {
+      try {
+        setLoading(true);
+        const productService = new ProductService();
+  
+        if (order === "default") {
+          const response = await productService.getProducts();
+          dispatch(setProductListAction(response.products));
+        } else {
+          const response = await productService.getSortedProducts("price", order);
+          dispatch(setProductListAction(response.products));
+        }
+      } catch (error) {
+        setError((error as AxiosError).message);
+      } finally {
+        setLoading(false);
+      }
+    },
+    []
+  );
+
   return {
     productList: state.productList,
     loading,
@@ -122,6 +144,7 @@ export const useProductTableStore = () => {
     memoizedSaveProductButtonClickCallback,
     memoizedAddProductCallback,
     memoizedSearchProductsCallback,
+    memoizedSortProductsCallback,
   };
 };
 
