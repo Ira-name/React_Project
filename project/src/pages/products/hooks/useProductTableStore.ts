@@ -14,6 +14,8 @@ export const useProductTableStore = () => {
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState(1); // Слідкуємо за поточною сторінкою
+  const productsPerPage = 12; // Кількість продуктів на сторінку
 
   useEffect(() => {
     let isMounted = true;
@@ -136,6 +138,29 @@ export const useProductTableStore = () => {
     []
   );
 
+  const fetchProductsByPage = useCallback(async (page: number) => {
+    try {
+      setLoading(true);
+      const productService = new ProductService();
+      const skip = (page - 1) * productsPerPage;
+
+      const response = await productService.getPaginatedProducts(productsPerPage, skip);
+
+      dispatch(setProductListAction(response.products));
+      setCurrentPage(page); 
+    } catch (error) {
+      setError((error as AxiosError).message);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    fetchProductsByPage(1); 
+  }, [fetchProductsByPage]);
+
+
+
   return {
     productList: state.productList,
     loading,
@@ -145,6 +170,9 @@ export const useProductTableStore = () => {
     memoizedAddProductCallback,
     memoizedSearchProductsCallback,
     memoizedSortProductsCallback,
+    currentPage,
+    productsPerPage,
+    fetchProductsByPage,
   };
 };
 
