@@ -175,7 +175,7 @@ const CardProductComponent = ({
             )}
           </div>
         )}
-        <Card.Text>"render"{renderCount}</Card.Text>
+        {/* <Card.Text>"render"{renderCount}</Card.Text> */}
       </Card.Body>
     </Card>
   );

@@ -151,7 +151,7 @@ const UserTableRowComponent = ({
           )}
         </div>
       </td>
-      <td>{renderCount}</td>
+      {/* <td>{renderCount}</td> */}
     </tr>
   );
 };

@@ -44,10 +44,10 @@ const AddUserFormComponent = ({ onAddUser }: AddUserFormProps) => {
 
   return (
     <>
-      <Button variant="success" onClick={handleShowModal}>
+    
+      <Button variant="success" onClick={handleShowModal} >
         Add User
       </Button>
-
       <Modal show={showModal} onHide={handleCloseModal}>
         <Modal.Header>
           <Modal.Title>Add New User</Modal.Title>

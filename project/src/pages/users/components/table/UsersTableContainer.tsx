@@ -20,7 +20,7 @@ const UsersTableContainer = () => {
 
   return (
     <div>
-      <h5>UsersTableContainer count: {renderCount}</h5>
+      {/* <h5>UsersTableContainer count: {renderCount}</h5> */}
       {loading && <Loading />}
       {error && <ErrorMessage error={error} />}
       <AddUserForm onAddUser={memoizedAddUserCallback} />

@@ -1,4 +1,5 @@
 import { memo } from "react";
+import Table from "react-bootstrap/Table";
 
 import { useRenderCount } from "../../../../hooks/useRenderCount";
 import { User } from "../../service/users.service";
@@ -19,18 +20,18 @@ const UserTableComponent = ({
 
   return (
     <>
-      <h5>UserTable count: {renderCount}</h5>
-      <table>
+      {/* <h5>UserTable count: {renderCount}</h5> */}
+      <Table striped bordered hover variant="white">
         <thead>
           <tr>
-            <th>Id</th>
+            <th>#</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
             <th>Username</th>
             <th>Password</th>
             <th>Actions</th>
-            <th>Render Count</th>
+            {/* <th>Render Count</th> */}
           </tr>
         </thead>
         <tbody>
@@ -43,7 +44,7 @@ const UserTableComponent = ({
             />
           ))}
         </tbody>
-      </table>
+      </Table>
     </>
   );
 };

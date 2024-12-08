@@ -20,7 +20,7 @@ const ProductListComponen = ({
   const renderCount = useRenderCount();
   return (
     <>
-      <h5>Product Table count: {renderCount}</h5>
+      {/* <h5>Product Table count: {renderCount}</h5> */}
       <div className="d-flex flex-wrap">
         {productList.map((product) => (
           <CardProduct

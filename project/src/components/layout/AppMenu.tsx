@@ -1,9 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
+import { useRenderCount } from "../../hooks/useRenderCount";
 
 const AppMenu = () => {
   const navigate = useNavigate();
-
+  const renderCount = useRenderCount();
   const handleLogout = () => {
     localStorage.removeItem("user");
     navigate("/login");
@@ -19,6 +20,7 @@ const AppMenu = () => {
 
   return (
     <Navbar bg="light" expand="lg">
+         <h5>AppMenu count: {renderCount}</h5>
       <Container>
         <Navbar.Brand><img
             src="src/components/img/bag_2.png"

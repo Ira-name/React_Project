@@ -4,7 +4,7 @@ import ProductListContainer from "./components/list/ProductListContainer";
 const ProductPage = () => {
   return (
     <div>
-       <PageTitle title="Product List" />
+       <PageTitle title="Product " />
       <ProductListContainer />
     </div>
   );

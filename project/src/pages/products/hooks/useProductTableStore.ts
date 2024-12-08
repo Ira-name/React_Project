@@ -84,6 +84,21 @@ export const useProductTableStore = () => {
     },
     []
   );
+  const memoizedSearchProductsCallback = useCallback(
+    async (searchQuery: string) => {
+      try {
+        setLoading(true);
+        const productService = new ProductService();
+        const response = await productService.searchProducts(searchQuery);
+        dispatch(setProductListAction(response.products));
+      } catch (error) {
+        setError((error as AxiosError).message);
+      } finally {
+        setLoading(false);
+      }
+    },
+    []
+  );
   const memoizedSaveProductButtonClickCallback = useCallback(
     async (productId: number, updatedProduct: Partial<Product>) => {
       try {
@@ -106,6 +121,7 @@ export const useProductTableStore = () => {
     memoizedProductItemDeleteButtonClickCallback,
     memoizedSaveProductButtonClickCallback,
     memoizedAddProductCallback,
+    memoizedSearchProductsCallback,
   };
 };
 
