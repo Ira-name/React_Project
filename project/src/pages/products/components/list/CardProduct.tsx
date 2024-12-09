@@ -1,11 +1,11 @@
 import { Button, Card } from "react-bootstrap";
 import { ChangeEvent, memo, useCallback, useMemo, useState } from "react";
-import { useRenderCount } from "../../../../hooks/useRenderCount";
+// import { useRenderCount } from "../../../../hooks/useRenderCount";
 import { Product } from "../../service/products.service";
 import ProductTitleInput from "../ProductTitleInput";
 import {
   useCartDispatch,
-  useCartState,
+  // useCartState,
 } from "../../../cart/hook/useProductTableContext";
 
 interface CardProductProps {
@@ -21,9 +21,9 @@ const CardProductComponent = ({
   onProductItemDelete,
   onSaveProductButtonClick,
 }: CardProductProps) => {
-  const renderCount = useRenderCount();
+  // const renderCount = useRenderCount();
 
-  const { cartItems } = useCartState();
+  // const { cartItems } = useCartState();
   const { addToCart } = useCartDispatch();
 
   const role = localStorage.getItem("role");

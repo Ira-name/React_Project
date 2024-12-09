@@ -1,6 +1,6 @@
 import ErrorMessage from "../../../../components/layout/ErrorMessage";
 import Loading from "../../../../components/layout/Loading";
-import { useRenderCount } from "../../../../hooks/useRenderCount";
+// import { useRenderCount } from "../../../../hooks/useRenderCount";
 import { useProductTableStore } from "../../hooks/useProductTableStore";
 import PaginationPage from "../PaginationPage";
 import PriceSort from "../PriceSort";
@@ -9,7 +9,7 @@ import AddProductForm from "../AddProductForm";
 import ProductList from "./ProductList";
 
 const ProductListContainer = () => {
-  const renderCount = useRenderCount();
+  // const renderCount = useRenderCount();
 
   const {
     error,

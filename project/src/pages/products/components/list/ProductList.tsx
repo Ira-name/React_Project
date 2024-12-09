@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { useRenderCount } from "../../../../hooks/useRenderCount";
+// import { useRenderCount } from "../../../../hooks/useRenderCount";
 import { Product } from "../../service/products.service";
 import CardProduct from "./CardProduct";
 
@@ -17,7 +17,7 @@ const ProductListComponen = ({
   onProductItemDelete,
   onSaveProductButtonClick,
 }: ProductProps) => {
-  const renderCount = useRenderCount();
+  // const renderCount = useRenderCount();
   return (
     <>
       {/* <h5>Product Table count: {renderCount}</h5> */}

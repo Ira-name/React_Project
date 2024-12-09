@@ -1,13 +1,13 @@
 import ErrorMessage from "../../../../components/layout/ErrorMessage";
 import Loading from "../../../../components/layout/Loading";
-import { useRenderCount } from "../../../../hooks/useRenderCount";
+// import { useRenderCount } from "../../../../hooks/useRenderCount";
 
 import UserTable from "./UserTable";
 import { useUserTableStore } from "../../hooks/useUsersTableStore";
 import AddUserForm from "../AddUserForm";
 
 const UsersTableContainer = () => {
-  const renderCount = useRenderCount();
+  // const renderCount = useRenderCount();
 
   const {
     error,

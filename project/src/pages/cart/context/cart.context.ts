@@ -1,4 +1,4 @@
-import React, { createContext, useMemo, ReactNode } from "react";
+import { createContext} from "react";
 import { Product } from "../../products/service/products.service";
 
 interface CartStateContextProps {

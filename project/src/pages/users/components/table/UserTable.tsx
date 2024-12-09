@@ -1,7 +1,7 @@
 import { memo } from "react";
 import Table from "react-bootstrap/Table";
 
-import { useRenderCount } from "../../../../hooks/useRenderCount";
+// import { useRenderCount } from "../../../../hooks/useRenderCount";
 import { User } from "../../service/users.service";
 import UserTableRow from "./UserTableRow";
 
@@ -16,7 +16,7 @@ const UserTableComponent = ({
   onUserItemDelete,
   onSaveUserButtonClick,
 }: UserTableProps) => {
-  const renderCount = useRenderCount();
+  // const renderCount = useRenderCount();
 
   return (
     <>

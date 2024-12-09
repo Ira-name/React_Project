@@ -1,6 +1,6 @@
 import { ChangeEvent, memo, useCallback, useMemo, useState } from "react";
 
-import { useRenderCount } from "../../../../hooks/useRenderCount";
+// import { useRenderCount } from "../../../../hooks/useRenderCount";
 import { User } from "../../service/users.service";
 import UserTitleInput from "../UserTitleInput";
 
@@ -15,7 +15,7 @@ const UserTableRowComponent = ({
   onUserItemDelete,
   onSaveUserButtonClick,
 }: UserTableRowProps) => {
-  const renderCount = useRenderCount();
+  // const renderCount = useRenderCount();
 
   const memoizedFirstName = useMemo(() => user.firstName, [user.firstName]);
   const memoizedLastName = useMemo(() => user.lastName, [user.lastName]);
