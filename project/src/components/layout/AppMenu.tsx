@@ -26,7 +26,7 @@ const AppMenu = () => {
       <Container>
         <Navbar.Brand>
           <img
-            src="src/components/img/bag_2.png"
+            src="./bag_2.png"
             alt="Shop Logo"
             style={{ height: "40px", width: "auto" }}
           />

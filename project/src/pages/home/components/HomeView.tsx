@@ -11,7 +11,7 @@ const HomeView = () => {
     <>
       <div style={{ position: "relative", width: "100%", marginTop: "80px" }}>
         <img
-          src="src/pages/home/img/home.jpg"
+          src="./home.jpg"  
           alt="Shop"
           style={{ width: "100%", height: "auto" }}
         />
