@@ -3,6 +3,10 @@ import { ChangeEvent, memo, useCallback, useMemo, useState } from "react";
 import { useRenderCount } from "../../../../hooks/useRenderCount";
 import { Product } from "../../service/products.service";
 import ProductTitleInput from "../ProductTitleInput";
+import {
+  useCartDispatch,
+  useCartState,
+} from "../../../cart/hook/useProductTableContext";
 
 interface CardProductProps {
   product: Product;
@@ -18,6 +22,10 @@ const CardProductComponent = ({
   onSaveProductButtonClick,
 }: CardProductProps) => {
   const renderCount = useRenderCount();
+
+  const { cartItems } = useCartState();
+  const { addToCart } = useCartDispatch();
+
   const role = localStorage.getItem("role");
   const memoizedTitle = useMemo(() => product.title, [product.title]);
   const memoizedDescription = useMemo(
@@ -139,7 +147,9 @@ const CardProductComponent = ({
           </div>
         )}
         <div className="d-flex justify-content-center mt-3">
-          <Button variant="outline-primary">Add to Cart</Button>
+          <Button variant="outline-primary" onClick={() => addToCart(product)}>
+            Add to Cart
+          </Button>
         </div>
         {role === "admin" && (
           <div className="d-flex justify-content-between mt-3">

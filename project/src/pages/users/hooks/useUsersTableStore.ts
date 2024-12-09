@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useReducer, useState } from "react";
 import { AxiosError } from "axios";
-import { UserService ,User } from "../service/users.service";
+import { UserService, User } from "../service/users.service";
 import {
   addUserAction,
   deleteUserAction,
@@ -69,10 +69,10 @@ export const useUserTableStore = () => {
     async (newUser: Partial<User>) => {
       try {
         setLoading(true);
-  
+
         const userService = new UserService();
         const createdUser = await userService.addUser(newUser as User);
-  
+
         dispatch(addUserAction(createdUser));
       } catch (error) {
         setError((error as AxiosError).message);

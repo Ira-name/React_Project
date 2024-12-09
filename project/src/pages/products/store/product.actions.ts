@@ -1,4 +1,3 @@
-
 import { Product } from "../service/products.service";
 
 type ProductPayloadTypes =

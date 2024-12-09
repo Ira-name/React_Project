@@ -1,6 +1,6 @@
 import { memo, useCallback, useState, useMemo } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
-import { Product } from "../../service/products.service";
+import { Product } from "../service/products.service";
 
 interface AddProductFormProps {
   onAddProduct: (newProduct: Partial<Product>) => void;

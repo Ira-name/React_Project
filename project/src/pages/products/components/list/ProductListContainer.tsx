@@ -5,7 +5,7 @@ import { useProductTableStore } from "../../hooks/useProductTableStore";
 import PaginationPage from "../PaginationPage";
 import PriceSort from "../PriceSort";
 import SearchBar from "../SearchBar";
-import AddProductForm from "./AddProductForm";
+import AddProductForm from "../AddProductForm";
 import ProductList from "./ProductList";
 
 const ProductListContainer = () => {
@@ -42,7 +42,10 @@ const ProductListContainer = () => {
         onProductItemDelete={memoizedProductItemDeleteButtonClickCallback}
         onSaveProductButtonClick={memoizedSaveProductButtonClickCallback}
       />
-            <PaginationPage currentPage={currentPage} onPageChange={handlePageChange} />
+      <PaginationPage
+        currentPage={currentPage}
+        onPageChange={handlePageChange}
+      />
     </div>
   );
 };

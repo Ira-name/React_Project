@@ -6,7 +6,10 @@ interface PaginationPageProps {
   onPageChange: (page: number) => void;
 }
 
-const PaginationPage: React.FC<PaginationPageProps> = ({ currentPage, onPageChange }) => {
+const PaginationPage: React.FC<PaginationPageProps> = ({
+  currentPage,
+  onPageChange,
+}) => {
   const handlePrevious = () => {
     if (currentPage > 1) {
       onPageChange(currentPage - 1);
@@ -28,7 +31,7 @@ const PaginationPage: React.FC<PaginationPageProps> = ({ currentPage, onPageChan
         Previous
       </Button>
       <Button variant="outline-primary" onClick={handleNext} className="mx-2">
-      Next
+        Next
       </Button>
     </div>
   );

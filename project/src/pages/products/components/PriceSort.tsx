@@ -27,7 +27,7 @@ const PriceSortComponent: React.FC<PriceSortButtonsProps> = ({ onSort }) => {
         style={{ margin: "0 8px" }}
         onClick={handleSortAsc}
       >
-Sort lowest price
+        Sort lowest price
       </Button>
       <Button
         variant="outline-secondary"

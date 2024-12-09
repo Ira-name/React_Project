@@ -3,9 +3,7 @@ import React, { useCallback } from "react";
 
 interface ProductTitleInputProps {
   title: string;
-  onProductTitleChange: (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => void;
+  onProductTitleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const ProductTitleInputComponent = ({
