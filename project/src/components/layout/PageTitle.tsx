@@ -1,7 +1,7 @@
-import { useRenderCount } from "../../hooks/useRenderCount";
+// import { useRenderCount } from "../../hooks/useRenderCount";
 
 const PageTitle = ({ title }: { title: string }) => {
-  const renderCount = useRenderCount();
+  // const renderCount = useRenderCount();
 
   return (
     <>
