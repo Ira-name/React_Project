@@ -1,13 +1,12 @@
 import React from "react";
 import { ListGroup, Button } from "react-bootstrap";
-import { Product } from "../../products/service/products.service";
+// import { Product } from "../../products/service/products.service";
+import { useCartDispatch, useCartState } from "../hook/useProductTableContext";
 
-interface CartListProps {
-  cartItems: Product[];
-  onRemoveFromCart: (id: number) => void;
-}
+const CartList: React.FC = () => {
+  const { cartItems } = useCartState();
+  const { removeFromCart } = useCartDispatch();
 
-const CartList: React.FC<CartListProps> = ({ cartItems, onRemoveFromCart }) => {
   return (
     <div>
       {cartItems.length === 0 ? (
@@ -24,7 +23,7 @@ const CartList: React.FC<CartListProps> = ({ cartItems, onRemoveFromCart }) => {
               </div>
               <Button
                 variant="outline-danger"
-                onClick={() => onRemoveFromCart(item.id)}
+                onClick={() => removeFromCart(item.id)}
               >
                 Remove
               </Button>
