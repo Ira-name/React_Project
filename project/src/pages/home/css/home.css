@@ -1,0 +1,20 @@
+.home {
+  position: relative;
+  width: 100%;
+  margin-top: 80px;
+}
+.home-img {
+  width: 100%;
+  height: auto;
+}
+.button-home {
+  position: absolute;
+  top: 200px;
+  left: 200px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}

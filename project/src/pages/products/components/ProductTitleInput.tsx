@@ -20,9 +20,7 @@ const ProductTitleInputComponent = ({
 
   return (
     <input
-      style={{
-        width: "100%",
-      }}
+    className="title"
       type="text"
       value={title}
       onChange={memoizedProductTitleChangeCallback}

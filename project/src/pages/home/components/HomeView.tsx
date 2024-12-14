@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-
+import "../css/home.css";
 const HomeView = () => {
   const navigate = useNavigate();
 
@@ -9,26 +9,9 @@ const HomeView = () => {
 
   return (
     <>
-      <div style={{ position: "relative", width: "100%", marginTop: "80px" }}>
-        <img
-          src="./home.jpg"  
-          alt="Shop"
-          style={{ width: "100%", height: "auto" }}
-        />
-        <button
-          onClick={goToProducts}
-          style={{
-            position: "absolute",
-            top: "200px",
-            left: "200px",
-            padding: "10px 20px",
-            cursor: "pointer",
-            backgroundColor: "#000",
-            color: "#fff",
-            border: "none",
-            borderRadius: "5px",
-          }}
-        >
+      <div className="home">
+        <img src="./home.jpg" alt="Shop" className="home-img" />
+        <button onClick={goToProducts} className="button-home">
           Check out our products
         </button>
       </div>

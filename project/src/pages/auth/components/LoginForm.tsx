@@ -86,61 +86,68 @@ const LoginForm: React.FC = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit} style={{ width: "350px" }}>
-      <h1 className="text-center mb-4">Login</h1>
+    <div className="d-flex justify-content-center align-items-center mt-5">
+      <img
+        src="./shop2.jpg"
+        alt="ЛОГо"
+        style={{ maxWidth: "100%", marginRight: "20px" }}
+      />
+      <Form onSubmit={handleSubmit} style={{ width: "350px" }}>
+        <h1 className="text-center mb-4">Login</h1>
 
-      <Form.Group
-        className="mb-3 d-flex flex-column align-items-start"
-        controlId="formUserName"
-      >
-        <Form.Label>Name</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Enter name"
-          value={userName}
-          onChange={handleUserNameInputChange}
-        />
-      </Form.Group>
-
-      <Form.Group
-        className="mb-3 d-flex flex-column align-items-start"
-        controlId="formEmail"
-      >
-        <Form.Label>Email</Form.Label>
-        <Form.Control
-          type="email"
-          placeholder="Enter email"
-          value={email}
-          onChange={handleEmailInputChange}
-        />
-      </Form.Group>
-
-      <Form.Group
-        className="mb-3 d-flex flex-column align-items-start"
-        controlId="formPassword"
-      >
-        <Form.Label>Password</Form.Label>
-        <InputGroup>
+        <Form.Group
+          className="mb-3 d-flex flex-column align-items-start"
+          controlId="formUserName"
+        >
+          <Form.Label>Name</Form.Label>
           <Form.Control
-            type={showPassword ? "text" : "password"}
-            placeholder="Password"
-            value={password}
-            onChange={handlePasswordInputChange}
+            type="text"
+            placeholder="Enter name"
+            value={userName}
+            onChange={handleUserNameInputChange}
           />
-          <Button
-            variant="outline-secondary"
-            onClick={submitShowPassword}
-            aria-label={showPassword ? "Hide password" : "Show password"}
-          >
-            {showPassword ? <BsEyeSlash /> : <BsEye />}
-          </Button>
-        </InputGroup>
-      </Form.Group>
+        </Form.Group>
 
-      <Button variant="primary" type="submit" className="w-100">
-        Login
-      </Button>
-    </Form>
+        <Form.Group
+          className="mb-3 d-flex flex-column align-items-start"
+          controlId="formEmail"
+        >
+          <Form.Label>Email</Form.Label>
+          <Form.Control
+            type="email"
+            placeholder="Enter email"
+            value={email}
+            onChange={handleEmailInputChange}
+          />
+        </Form.Group>
+
+        <Form.Group
+          className="mb-3 d-flex flex-column align-items-start"
+          controlId="formPassword"
+        >
+          <Form.Label>Password</Form.Label>
+          <InputGroup>
+            <Form.Control
+              type={showPassword ? "text" : "password"}
+              placeholder="Password"
+              value={password}
+              onChange={handlePasswordInputChange}
+            />
+            <Button
+              variant="outline-secondary"
+              onClick={submitShowPassword}
+              aria-label={showPassword ? "Hide password" : "Show password"}
+            >
+              {showPassword ? <BsEyeSlash /> : <BsEye />}
+            </Button>
+          </InputGroup>
+        </Form.Group>
+
+        <Button variant="primary" type="submit" className="w-100">
+          Login
+        </Button>
+      </Form>
+    </div>
   );
 };
 

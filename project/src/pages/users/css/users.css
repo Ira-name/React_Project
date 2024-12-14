@@ -1,0 +1,14 @@
+.input {
+  width: 100%;
+}
+.password {
+  display: flex;
+  gap: 1em;
+}
+.mb {
+  margin-bottom: 1rem;
+}
+.add-user {
+  margin-bottom: 22px;
+  padding: 7px 45px;
+}

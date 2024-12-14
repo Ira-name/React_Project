@@ -6,7 +6,8 @@ import NotFoundPage from "../components/NotFoundPage";
 import CartPage from "../pages/cart/CartPage";
 import ProductPage from "../pages/products/ProductPage";
 import ProtectedRoute from "./ProtectedRoute";
-import LoginPage from "../pages/auth/components/LoginPage";
+import LoginPage from "../pages/auth/LoginPage";
+import UnauthorizedPage from "../components/UnauthorizedPage";
 
 const AppRouter = () => {
   return (
@@ -54,6 +55,7 @@ const AppRouter = () => {
             }
           />
           <Route path="*" element={<NotFoundPage />} />
+          <Route path="/unauthorized" element={<UnauthorizedPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

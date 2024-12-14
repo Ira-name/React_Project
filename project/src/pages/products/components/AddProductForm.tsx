@@ -117,8 +117,8 @@ const AddProductFormComponent = ({ onAddProduct }: AddProductFormProps) => {
 
   return (
     <>
-      <div className="d-flex justify-content-end ">
-        <Button variant="success" onClick={handleShow}>
+      <div className="form-product">
+        <Button variant="success"className="button-add" onClick={handleShow}>
           Create Product
         </Button>
       </div>

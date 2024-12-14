@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import { Button } from "react-bootstrap";
-
+import "../css/product.css";
 interface PriceSortButtonsProps {
   onSort: (order: "asc" | "desc" | "default") => void;
 }
@@ -20,25 +20,25 @@ const PriceSortComponent: React.FC<PriceSortButtonsProps> = ({ onSort }) => {
 
   return (
     <div
-      style={{ display: "flex", justifyContent: "start", marginBottom: "1rem" }}
+      className="price"
     >
       <Button
         variant="outline-primary"
-        style={{ margin: "0 8px" }}
+        className="buttonprice"
         onClick={handleSortAsc}
       >
         Sort lowest price
       </Button>
       <Button
         variant="outline-secondary"
-        style={{ margin: "0 8px" }}
+        className="buttonprice"
         onClick={handleSortDesc}
       >
         Sort highest price
       </Button>
       <Button
         variant="outline-dark"
-        style={{ margin: "0 8px" }}
+        className="buttonprice"
         onClick={handleSortDefault}
       >
         Default

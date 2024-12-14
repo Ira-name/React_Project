@@ -1,7 +1,7 @@
 import { memo, useCallback, useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import { User } from "../service/users.service";
-
+import "../css/users.css";
 interface AddUserFormProps {
   onAddUser: (newUser: Partial<User>) => void;
 }
@@ -45,7 +45,7 @@ const AddUserFormComponent = ({ onAddUser }: AddUserFormProps) => {
   return (
     <>
     
-      <Button variant="success" onClick={handleShowModal} >
+      <Button variant="success" className="add-user" onClick={handleShowModal} >
         Add User
       </Button>
       <Modal show={showModal} onHide={handleCloseModal}>
@@ -54,7 +54,7 @@ const AddUserFormComponent = ({ onAddUser }: AddUserFormProps) => {
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group className="mb-3">
+            <Form.Group className="mb">
               <Form.Label>First Name</Form.Label>
               <Form.Control
                 type="text"
@@ -63,7 +63,7 @@ const AddUserFormComponent = ({ onAddUser }: AddUserFormProps) => {
                 onChange={(e) => setFirstName(e.target.value)}
               />
             </Form.Group>
-            <Form.Group className="mb-3">
+            <Form.Group className="mb">
               <Form.Label>Last Name</Form.Label>
               <Form.Control
                 type="text"
@@ -72,7 +72,7 @@ const AddUserFormComponent = ({ onAddUser }: AddUserFormProps) => {
                 onChange={(e) => setLastName(e.target.value)}
               />
             </Form.Group>
-            <Form.Group className="mb-3">
+            <Form.Group className="mb">
               <Form.Label>Email</Form.Label>
               <Form.Control
                 type="email"
@@ -81,7 +81,7 @@ const AddUserFormComponent = ({ onAddUser }: AddUserFormProps) => {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </Form.Group>
-            <Form.Group className="mb-3">
+            <Form.Group className="mb">
               <Form.Label>Username</Form.Label>
               <Form.Control
                 type="text"
@@ -90,7 +90,7 @@ const AddUserFormComponent = ({ onAddUser }: AddUserFormProps) => {
                 onChange={(e) => setUsername(e.target.value)}
               />
             </Form.Group>
-            <Form.Group className="mb-3">
+            <Form.Group className="mb">
               <Form.Label>Password</Form.Label>
               <Form.Control
                 type="password"

@@ -1,0 +1,60 @@
+.mb {
+  margin-bottom: 1rem;
+  padding-top: 15px;
+}
+.title {
+  width: 100%;
+    margin-top: 0px;
+}
+.price {
+  display: flex;
+  justify-content: start;
+  margin-bottom: 1rem;
+}
+.buttonprice {
+  margin: 0 8px;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+.button-pagination {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+.form-product {
+  display: flex;
+  justify-content: end;
+}
+.product-list
+{
+    display:flex;
+     flex-wrap:wrap;
+}
+.cards
+{
+    display:flex;
+    justify-content:center;
+     margin-top: 1.5rem;
+}
+.card-button
+{
+    display:flex;
+    justify-content:space-between;
+     margin-top: 1.5rem;
+     gap: 1rem;
+}
+.button-crud
+{
+    padding: 6px 35px;
+}
+.button-add
+{
+  margin-top: 59px;
+}
+.card-photo
+{
+  width: 24rem; 
+  margin: 10px;
+}

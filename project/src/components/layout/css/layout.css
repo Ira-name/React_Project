@@ -1,0 +1,23 @@
+.navbar-logo {
+  height: 40px;
+  width: auto;
+}
+.cursor {
+  cursor: pointer;
+}
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f1f1f1;
+  margin-top: 90px;
+  max-width: 100%;
+  bottom: 0; 
+  left: 0;
+}
+.error
+{
+  margin-top: 10px;
+}
+.title-name{
+  margin-top: 50px;
+}

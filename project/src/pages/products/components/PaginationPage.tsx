@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-
+import "../css/product.css";
 interface PaginationPageProps {
   currentPage: number;
   onPageChange: (page: number) => void;
@@ -21,16 +21,16 @@ const PaginationPage: React.FC<PaginationPageProps> = ({
   };
 
   return (
-    <div className="d-flex justify-content-center mt-4">
+    <div className="pagination">
       <Button
         variant="outline-secondary"
         onClick={handlePrevious}
         disabled={currentPage === 1}
-        className="mx-2"
+        className="button-pagination"
       >
         Previous
       </Button>
-      <Button variant="outline-primary" onClick={handleNext} className="mx-2">
+      <Button variant="outline-primary" onClick={handleNext} className="button-pagination">
         Next
       </Button>
     </div>

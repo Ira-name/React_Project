@@ -1,5 +1,5 @@
 import { ChangeEvent, memo, useCallback, useMemo, useState } from "react";
-
+import "../../css/users.css";
 // import { useRenderCount } from "../../../../hooks/useRenderCount";
 import { User } from "../../service/users.service";
 import UserTitleInput from "../UserTitleInput";
@@ -130,10 +130,7 @@ const UserTableRowComponent = ({
       </td>
       <td>
         <div
-          style={{
-            display: "flex",
-            gap: "1em",
-          }}
+         className="password"
         >
           {isEditMode ? (
             <button onClick={memoizedSaveUserButtonClickCallback}>Save</button>

@@ -1,5 +1,5 @@
 import { ChangeEvent, memo } from "react";
-
+import "../css/product.css";
 interface SearchBarProps {
   onSearch: (query: string) => void;
 }
@@ -9,13 +9,15 @@ const SearchBarComponent = ({ onSearch }: SearchBarProps) => {
     onSearch(event.target.value);
   };
   return (
-    <div className="mb-3" style={{ paddingTop: "15px" }}>
+    <div className="mb">
       <input
         type="text"
         placeholder="Search products..."
         onChange={handleSearchChange}
         className="form-control"
+        
       />
+      
     </div>
   );
 };

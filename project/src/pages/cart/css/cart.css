@@ -1,0 +1,7 @@
+.list-cart
+{
+    display:flex;
+    justify-content:space-between;
+    width: 1100px;
+gap:130px;
+}

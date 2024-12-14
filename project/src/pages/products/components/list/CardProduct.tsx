@@ -1,12 +1,10 @@
 import { Button, Card } from "react-bootstrap";
 import { ChangeEvent, memo, useCallback, useMemo, useState } from "react";
+import "../../css/product.css";
 // import { useRenderCount } from "../../../../hooks/useRenderCount";
 import { Product } from "../../service/products.service";
 import ProductTitleInput from "../ProductTitleInput";
-import {
-  useCartDispatch,
-  // useCartState,
-} from "../../../cart/hook/useProductTableContext";
+import { useCartDispatch } from "../../../cart/hook/useProductTableContext";
 
 interface CardProductProps {
   product: Product;
@@ -23,7 +21,6 @@ const CardProductComponent = ({
 }: CardProductProps) => {
   // const renderCount = useRenderCount();
 
-  // const { cartItems } = useCartState();
   const { addToCart } = useCartDispatch();
 
   const role = localStorage.getItem("role");
@@ -103,7 +100,7 @@ const CardProductComponent = ({
   }, [onProductItemDelete, product.id]);
 
   return (
-    <Card style={{ width: "24rem", margin: "10px" }}>
+    <Card className="card-photo">
       <Card.Img variant="top" src={thumbnail} alt={product.title} />
       <Card.Body>
         <Card.Title>
@@ -146,15 +143,16 @@ const CardProductComponent = ({
             />
           </div>
         )}
-        <div className="d-flex justify-content-center mt-3">
+        <div className="cards">
           <Button variant="outline-primary" onClick={() => addToCart(product)}>
             Add to Cart
           </Button>
         </div>
         {role === "admin" && (
-          <div className="d-flex justify-content-between mt-3">
+          <div className="card-button">
             {isEditMode ? (
               <Button
+                className="button-crud"
                 variant="dark"
                 onClick={memoizedSaveProductButtonClickCallback}
               >
@@ -162,6 +160,7 @@ const CardProductComponent = ({
               </Button>
             ) : (
               <Button
+                className="button-crud"
                 variant="secondary"
                 onClick={() => memoizedSetIsEditModeCallback(true)}
               >
@@ -170,6 +169,7 @@ const CardProductComponent = ({
             )}
             {isEditMode ? (
               <Button
+                className="button-crud"
                 variant="dark"
                 onClick={() => memoizedSetIsEditModeCallback(false)}
               >
@@ -177,7 +177,8 @@ const CardProductComponent = ({
               </Button>
             ) : (
               <Button
-                variant="secondary"
+                className="button-crud"
+                variant="danger"
                 onClick={memoizedProductItemDeleteCallback}
               >
                 Delete

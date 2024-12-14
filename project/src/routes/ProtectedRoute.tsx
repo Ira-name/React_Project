@@ -16,7 +16,7 @@ const ProtectedRoute: FC<ProtectedRouteProps> = ({ children }) => {
       navigate("/login");
     } else {
       if (role === "user" && location.pathname === "/users") {
-        navigate("*");
+        navigate("/unauthorized");
       }
     }
   }, [user, role, navigate, location]);

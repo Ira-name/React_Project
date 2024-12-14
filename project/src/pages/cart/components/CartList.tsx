@@ -2,6 +2,7 @@ import React from "react";
 import { ListGroup, Button } from "react-bootstrap";
 // import { Product } from "../../products/service/products.service";
 import { useCartDispatch, useCartState } from "../hook/useProductTableContext";
+import "../css/cart.css";
 
 const CartList: React.FC = () => {
   const { cartItems } = useCartState();
@@ -14,10 +15,7 @@ const CartList: React.FC = () => {
       ) : (
         <ListGroup>
           {cartItems.map((item) => (
-            <ListGroup.Item
-              key={item.id}
-              className="d-flex justify-content-between"
-            >
+            <ListGroup.Item key={item.id} className="list-cart">
               <div>
                 <strong>{item.title}</strong> - ${item.price}
               </div>

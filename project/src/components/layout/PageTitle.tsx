@@ -5,7 +5,7 @@ const PageTitle = ({ title }: { title: string }) => {
 
   return (
     <>
-      <h1>{title}</h1>
+      <h1 className="title-name">{title}</h1>
       {/* <h5>PageTitle count: {renderCount}</h5> */}
     </>
   )

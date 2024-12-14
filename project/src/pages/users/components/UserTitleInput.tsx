@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-
+import "../css/users.css";
 interface UserTitleInputProps {
   value: string;
   onUserTitleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -18,9 +18,7 @@ const UserTitleInputComponent = ({
 
   return (
     <input
-      style={{
-        width: "100%",
-      }}
+    className="input"
       type="text"
       value={value}
       onChange={memoizedUserTitleChangeCallback}
